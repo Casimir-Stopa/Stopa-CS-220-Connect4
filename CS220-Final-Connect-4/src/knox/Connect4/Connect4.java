@@ -34,7 +34,7 @@ public class Connect4  {
 			n = scan.nextInt();
 		}
 		
-		int i = 6; // one less than board height
+		int i = 6;
 		while(curr.board[i][n] != spaces.BLANK) {
 			i--;
 		}
@@ -74,9 +74,35 @@ public class Connect4  {
 			  return true;
 		  }
 		  
-		  //check up left to bottom right (probably ok to not have if needed)
+		  //check up left to bottom right
+		  int spacesUpLeft = 0;
+		  int spacesDownRight = 0;
+		  while (gameBoard[row - spacesUpLeft - 1][column - spacesUpLeft - 1] == spaces.RED) {
+			  spacesUpLeft++;
+		  }
+		  	  while (gameBoard[row + spacesDownRight + 1][column + spacesDownRight + 1] == spaces.RED) {
+		  		  spacesDownRight++;
+		  }
+		  int totalUpLeftandDownRight = (spacesUpLeft + spacesDownRight + 1);
+
+		  if (totalUpLeftandDownRight >= 4) {
+			  return true;
+		  }
 		  
-		  //check bottom left top right (ok to not have if needed)
+		  //check bottom left top right
+		  int spacesDownLeft = 0;
+		  int spacesUpRight = 0;
+		  while (gameBoard[row + spacesDownLeft + 1][column - spacesDownLeft - 1] == spaces.RED) {
+			  spacesDownLeft++;
+		  }
+		  	  while (gameBoard[row + spacesUpRight + 1][column + spacesUpRight + 1] == spaces.RED) {
+		  		  spacesUpRight++;
+		  }
+		  int totalDownLeftandUpRight = (spacesDownLeft + spacesUpRight + 1);
+
+		  if (totalDownLeftandUpRight >= 4) {
+			  return true;
+		  }
 		  
 		  
 		  return false;
@@ -91,7 +117,7 @@ public class Connect4  {
 			n = scan.nextInt();
 		}
 		
-		int i = 6; // one less than board height
+		int i = 6;
 		while(curr.board[i][n] != spaces.BLANK) {
 			i--;
 		}
@@ -132,10 +158,35 @@ public class Connect4  {
 			  return true;
 		  }
 		  
-		  //check up left to bottom right (probably ok to not have if needed)
+		  //check up left to bottom right
+		  int spacesUpLeft = 0;
+		  int spacesDownRight = 0;
+		  while (gameBoard[row - spacesUpLeft - 1][column - spacesUpLeft - 1] == spaces.YELLOW) {
+			  spacesUpLeft++;
+		  }
+		  	  while (gameBoard[row + spacesDownRight + 1][column + spacesDownRight + 1] == spaces.YELLOW) {
+		  		  spacesDownRight++;
+		  }
+		  int totalUpLeftandDownRight = (spacesUpLeft + spacesDownRight + 1);
+
+		  if (totalUpLeftandDownRight >= 4) {
+			  return true;
+		  }
 		  
-		  //check bottom left top right (ok to not have if needed)
-		  
+		  //check bottom left top right
+		  int spacesDownLeft = 0;
+		  int spacesUpRight = 0;
+		  while (gameBoard[row + spacesDownLeft + 1][column - spacesDownLeft - 1] == spaces.YELLOW) {
+			  spacesDownLeft++;
+		  }
+		  	  while (gameBoard[row + spacesUpRight + 1][column + spacesUpRight + 1] == spaces.YELLOW) {
+		  		  spacesUpRight++;
+		  }
+		  int totalDownLeftandUpRight = (spacesDownLeft + spacesUpRight + 1);
+
+		  if (totalDownLeftandUpRight >= 4) {
+			  return true;
+		  }
 		  
 		
 		  

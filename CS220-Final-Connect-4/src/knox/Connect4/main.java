@@ -4,7 +4,6 @@ public class main {
 	
   	public static void main(String[] args) {
   		Connect4 b = new Connect4();
-  		Connect4GUI bBUI = new Connect4GUI();
   		boolean player1Win = false;
   		boolean player2Win = false;
 
@@ -24,10 +23,7 @@ public class main {
   				break;
   			}
   		} 
-  		
-		
-  		
-
+			Connect4GUI bBUI = new Connect4GUI();
 
   	}
   	}
