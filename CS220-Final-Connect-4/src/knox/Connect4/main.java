@@ -11,7 +11,8 @@ public class main {
   			Connect4.toString(b);
   			player1Win = Connect4.player1Turn(b);
   			if(player1Win) {
-  	  			Connect4.toString(b);
+  	  			//Connect4.toString(b);
+				System.out.println(b.toString());
   				System.out.print("Player 1 wins!!");
   				break;
   			}
