@@ -1,13 +1,9 @@
 package knox.Connect4;
 
-public enum spaces {
-	
-		
+public enum spaces {		
 			RED,
 			YELLOW,
 			BLANK,
-
-	
 }
 
 	
